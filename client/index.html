@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/papercss@1.6.1/dist/paper.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Favorites Books</title>
+</head>
+<body>
+    <div class="loginPage">
+        <form onsubmit="login(event)" id="login">
+            <h1>FavBooks</h1>
+            <input type="email" id="email" placeholder="email">
+            <input type="password" id="password" placeholder="password">
+            <input type="submit" value="login">
+        </form>
+    </div>
+    <div class="mainPage">
+        <button class="logout">Logout</button>
+        <h1>My Favorites Books</h1>
+        <!-- MODAL -->
+        <div class="row flex-spaces child-borders">
+            <label class="paper-btn margin" for="modal-1">Add Favorite Book</label>
+        </div>
+        <input class="modal-state" id="modal-1" type="checkbox">
+        <div class="modal">
+            <div class="modal-body">
+                <label class="btn-close" for="modal-1">X</label>
+                <h4 class="modal-title">Add Favorites Book</h4>
+                <form onsubmit="createBook(event)">
+                    <input id="title" type="text" placeholder="title">
+                    <input id="imgUrl" type="text" placeholder="image url">
+                    <input type="submit" value="submit">
+                </form>
+            </div>
+        </div>
+        <!-- END MODAL -->
+
+        <div class="bookList"></div>
+    </div>
+
+    <div class="updatePage">
+        <form>
+            <h1>Update Data</h1>
+            <input id="newtitle" type="text" placeholder="title">
+            <input id="newimgUrl" type="text" placeholder="image url">
+            <input type="submit" value="submit">
+        </form>
+    </div>
+    
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous">
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>
